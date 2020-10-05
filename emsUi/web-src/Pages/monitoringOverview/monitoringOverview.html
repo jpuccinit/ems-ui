@@ -1,0 +1,59 @@
+<uber-bread-crumbs ng-model="$ctrl.selectedOptions.searchOptions" ng-change="$ctrl.updateSearchOptions()">
+</uber-bread-crumbs>
+
+<div class="uber-container">
+    <!-- Inputs -->
+    <uber-point-selectors ng-model="$ctrl.selectedOptions" hide-asset="true"></uber-point-selectors>
+
+    <!-- Electrical kps -->
+    <div flex layout="row" class="uber-container">
+
+        <uber-main-electrical-kpis
+            ng-if="$ctrl.selectedOptions.searchOptions != null && $ctrl.selectedOptions.searchOptions.zone != null"
+            flex="100" points="$ctrl.selectedOptions.specificPoints">
+        </uber-main-electrical-kpis>
+    </div>
+
+
+    <div layout="row" layout-wrap layout-align="space-between start">
+
+        <div flex="100" layout-gt-md="row" layout-align="space-between stretch">
+            <!-- Floor plan -->
+            <uber-expansion-panel flex="100" flex-gt-md="70" card-title="Zone floor plan" fill-card="true" layout-margin>
+                <content>
+                    <uber-zone-floor-plan search-options="$ctrl.selectedOptions.searchOptions"
+                        display-option="$ctrl.displayOption">
+                    </uber-zone-floor-plan>
+                </content>
+            </uber-expansion-panel>
+            <!-- Active Alarmrs -->
+            <uber-expansion-panel flex="100" flex-gt-md="30" card-title="Active alarms">
+                <content>
+                    <uber-active-alarms search-options="$ctrl.selectedOptions.searchOptions"></uber-active-alarms>
+                </content>
+            </uber-expansion-panel>
+        </div>
+
+        <div flex="100" layout="row" layout-wrap layout-align="space-between stretch">
+            <!-- Power path -->
+            <!-- <div flex="100" flex-gt-md="100">
+                <uber-expansion-panel title="Power path — Rack XX-XX">
+                    <content>
+                        Content here
+                    </content>
+                </uber-expansion-panel>
+            </div> -->
+            <!-- Charts-->
+            <div flex="100" flex-gt-md="100">
+                <uber-expansion-panel card-title="Charts">
+                    <header-actions></header-actions>
+                    <content>
+                        <uber-statistics-widget points="$ctrl.selectedOptions.specificPoints" hide-settings="true"
+                            column="true">
+                        </uber-statistics-widget>
+                    </content>
+                </uber-expansion-panel>
+            </div>
+        </div>
+    </div>
+</div>

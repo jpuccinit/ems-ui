@@ -1,0 +1,9 @@
+uber-expansion-panel md-card-header {
+    padding: 0px 8px 0px 8px;
+    line-height: 2rem !important;
+    background-color: #ebebeb !important;
+}
+
+uber-expansion-panel .uber-expand-content {
+    height: 100%;
+}

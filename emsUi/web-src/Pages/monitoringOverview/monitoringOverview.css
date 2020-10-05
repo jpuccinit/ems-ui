@@ -1,0 +1,16 @@
+uber-zone-overview .uber-no-layout-margin {
+    margin: unset !important;
+}
+
+uber-zone-overview .uber-select-separator {
+    margin-right: 8px !important;
+}
+
+uber-zone-overview .card-container > md-card {
+    height: 100%;
+}
+
+/* atc-zone-overview .card-container {
+    padding: 0px;
+    height: 100%;
+} */
